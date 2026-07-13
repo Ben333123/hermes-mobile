@@ -432,6 +432,15 @@ def _compute_tool_definitions(
             elif not quiet_mode:
                 print(f"⚠️  Unknown toolset: {toolset_name}")
 
+    # Android APK invariant: phone control must remain available regardless of
+    # profile/session toolset selection. The embedded runtime provides the
+    # executable and shares its ADB HOME with the native pairing page.
+    if os.environ.get("HERMES_ANDROID_NATIVE_LIB_DIR"):
+        try:
+            import tools.android_debug_tool  # noqa: F401
+        except Exception as exc:
+            logger.exception("Android ADB tool registration failed: %s", exc)
+        tools_to_include.add("android_debug")
     # Plugin-registered tools are now resolved through the normal toolset
     # path — validate_toolset() / resolve_toolset() / get_all_toolsets()
     # all check the tool registry for plugin-provided toolsets.  No bypass

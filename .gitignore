@@ -13,6 +13,8 @@ local.properties
 *.key
 *.log
 *.hprof
+__pycache__/
+*.py[cod]
 .env
 .env.*
 !.env.example

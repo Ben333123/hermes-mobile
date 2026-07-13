@@ -231,7 +231,8 @@
       "#hermes-mobile-hero{padding:12px 2px 10px;}#hermes-mobile-hero-title{font-size:24px;line-height:1.18;font-weight:760;letter-spacing:0;background:linear-gradient(100deg,#4285f4,#9b72cb 42%,#ea4335 72%,#fbbc04);-webkit-background-clip:text;background-clip:text;color:transparent;}#hermes-mobile-hero-sub{margin-top:8px;color:#697386;font-size:14px;line-height:1.5;}",
       "#hermes-mobile-suggestions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;overflow:visible;padding:0 0 12px;}.hermes-mobile-suggestion{min-width:0;min-height:54px;border:1px solid rgba(218,225,235,.82);border-radius:16px;background:rgba(255,255,255,.72);padding:10px 12px;text-align:left;color:#172033;font-size:13px;line-height:1.35;box-shadow:0 12px 30px rgba(31,41,55,.06);}.hermes-mobile-suggestion:nth-child(3){grid-column:1/-1;}",
       "#hermes-mobile-stream{display:flex;flex-direction:column;gap:10px;padding-bottom:12px;overflow-x:hidden;}.hermes-mobile-bubble{max-width:88%;border-radius:18px;padding:11px 13px;font-size:15px;line-height:1.55;white-space:pre-wrap;word-break:break-word;box-shadow:0 10px 24px rgba(31,41,55,.06);}.hermes-mobile-bubble.user{align-self:flex-end;max-width:78%;background:#1f2937;color:#fff;border-bottom-right-radius:7px;}.hermes-mobile-bubble.assistant{align-self:flex-start;max-width:94%;background:transparent;color:#172033;border:0;box-shadow:none;border-radius:0;padding:6px 2px;}.hermes-mobile-empty{margin:8px auto 18px;max-width:88%;border:1px solid rgba(190,216,255,.9);background:rgba(239,246,255,.72);color:#28589a;border-radius:18px;padding:12px;text-align:center;font-size:14px;line-height:1.5;}",
-      ".hermes-mobile-agent-output{display:grid;gap:9px;min-width:min(260px,72vw);}.hermes-mobile-reasoning-card{border-radius:14px;padding:9px 10px;white-space:pre-wrap;word-break:break-word;background:rgba(99,102,241,.08);border:1px solid rgba(129,140,248,.24);color:#53617a;font-size:13px;line-height:1.45;}.hermes-mobile-reasoning-card.pending{width:min(260px,72vw);height:38px;position:relative;overflow:hidden;}.hermes-mobile-reasoning-card.pending::before{content:\"\";display:block;width:86px;height:8px;margin:6px 0;border-radius:999px;background:linear-gradient(90deg,rgba(99,102,241,.12),rgba(99,102,241,.32),rgba(99,102,241,.12));animation:hermesReasoningPulse 1.3s ease-in-out infinite;}.hermes-mobile-reasoning-card p{margin:0;}.hermes-mobile-answer-text{white-space:pre-wrap;word-break:break-word;color:inherit;font-size:15px;line-height:1.6;}.hermes-mobile-answer-text.pending{display:none;}@keyframes hermesReasoningPulse{0%,100%{opacity:.45;transform:translateX(0);}50%{opacity:1;transform:translateX(120px);}}",
+      ".hermes-mobile-agent-output{display:grid;gap:9px;min-width:min(260px,72vw);}.hermes-mobile-reasoning-card{border-radius:14px;padding:9px 10px;white-space:pre-wrap;word-break:break-word;background:rgba(99,102,241,.08);border:1px solid rgba(129,140,248,.24);color:#53617a;font-size:13px;line-height:1.45;}.hermes-mobile-reasoning-card p{margin:0;}.hermes-mobile-answer-text{white-space:pre-wrap;word-break:break-word;color:inherit;font-size:15px;line-height:1.6;}.hermes-mobile-answer-text.pending{display:none;}",
+      ".hermes-mobile-reasoning-card summary,.hermes-mobile-tool-call summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:720;}.hermes-mobile-reasoning-card summary::-webkit-details-marker,.hermes-mobile-tool-call summary::-webkit-details-marker{display:none;}.hermes-mobile-reasoning-card summary::before{content:'✦';color:#818cf8;margin-right:7px;}.hermes-mobile-reasoning-card.streaming summary::after{content:'';width:12px;height:12px;border:2px solid rgba(129,140,248,.28);border-top-color:#818cf8;border-radius:50%;animation:hermesToolSpin .8s linear infinite;}.hermes-mobile-reasoning-card p{margin:9px 0 0;padding-top:9px;border-top:1px solid rgba(129,140,248,.22);color:#334155;}.hermes-mobile-tool-trace{display:grid;gap:7px;}.hermes-mobile-tool-call{border:1px solid rgba(148,163,184,.25);border-radius:13px;background:rgba(148,163,184,.08);padding:9px 10px;font-size:12px;}.hermes-mobile-tool-call summary span::before{content:'⌁';color:#60a5fa;margin-right:7px;}.hermes-mobile-tool-call.running summary span::before{content:'◌';display:inline-block;animation:hermesToolSpin .8s linear infinite;}.hermes-mobile-tool-call summary em{font-style:normal;font-weight:650;color:#64748b;}.hermes-mobile-tool-call.running summary em{color:#6366f1;}.hermes-mobile-tool-call.complete summary em{color:#16a34a;}.hermes-mobile-tool-call.error summary em{color:#dc2626;}.hermes-mobile-tool-call p{margin:8px 0 0;color:#64748b;white-space:pre-wrap;word-break:break-word;}.hermes-mobile-tool-call pre{max-height:180px;overflow:auto;margin:8px 0 0;padding:8px;border-radius:9px;background:rgba(15,23,42,.06);white-space:pre-wrap;word-break:break-word;font:11px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;}@keyframes hermesToolSpin{to{transform:rotate(360deg);}}",
       "#hermes-mobile-composer{position:sticky;bottom:0;display:grid;grid-template-columns:auto auto 1fr auto;gap:8px;padding:10px 0 0;background:linear-gradient(180deg,rgba(244,247,251,0),#f4f7fb 30%);}#hermes-mobile-composer button{border:0;border-radius:999px;min-height:46px;min-width:46px;padding:0 12px;background:rgba(255,255,255,.82);color:#172033;font-weight:800;font-size:15px;box-shadow:0 10px 24px rgba(31,41,55,.08);}#hermes-mobile-composer button.primary{background:linear-gradient(135deg,#4285f4,#9b72cb);color:#fff;min-width:62px;}#hermes-mobile-input{min-width:0;min-height:46px;max-height:120px;border:1px solid rgba(210,219,232,.95);border-radius:24px;background:rgba(255,255,255,.9);color:#172033;padding:11px 14px;font:15px/1.45 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;resize:none;outline:none;box-shadow:0 10px 24px rgba(31,41,55,.06);}",
       ".hermes-mobile-list{display:grid;gap:9px;min-width:0;}.hermes-mobile-row{width:100%;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;background:rgba(255,255,255,.78);border:1px solid rgba(218,225,235,.88);border-radius:16px;padding:12px;box-shadow:0 10px 24px rgba(31,41,55,.05);overflow:hidden;}.hermes-mobile-row-main{min-width:0;overflow:hidden;}.hermes-mobile-row-main strong{display:block;font-size:14px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}.hermes-mobile-row-main span{display:block;margin-top:4px;color:#667085;font-size:12px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-word;}.hermes-mobile-row-actions{display:grid;gap:7px;grid-auto-flow:row;justify-items:end;}.hermes-mobile-row button,.hermes-mobile-panel button{border:0;border-radius:999px;min-height:38px;padding:0 14px;background:#1f2937;color:#fff;font-weight:760;white-space:nowrap;}.hermes-mobile-row button.secondary,.hermes-mobile-panel button.secondary{background:#eef2f7;color:#172033;}@media(max-width:380px){.hermes-mobile-row{grid-template-columns:1fr;}.hermes-mobile-row-actions{grid-auto-flow:column;justify-content:end;}}",
       ".hermes-mobile-form{display:grid;gap:10px;}.hermes-mobile-form label{display:grid;gap:5px;color:#667085;font-size:12px;font-weight:750;}.hermes-mobile-form input{min-height:44px;border:1px solid rgba(210,219,232,.95);border-radius:14px;padding:0 12px;background:rgba(255,255,255,.88);color:#172033;font-size:14px;outline:none;}.hermes-mobile-form-actions{display:flex;gap:8px;justify-content:flex-end;}",
@@ -244,10 +245,11 @@
       "#hermes-mobile-chat-body{min-height:0;overflow:auto;overflow-x:hidden;padding:4px calc(14px + var(--hermes-safe-right)) 12px calc(14px + var(--hermes-safe-left));}#hermes-mobile-chat-body.has-messages #hermes-mobile-hero,#hermes-mobile-chat-body.has-messages #hermes-mobile-suggestions{display:none!important;}#hermes-mobile-bottom{padding:7px calc(14px + var(--hermes-safe-right)) calc(9px + var(--hermes-safe-bottom)) calc(14px + var(--hermes-safe-left));background:linear-gradient(180deg,rgba(244,247,251,0),#f4f7fb 24%,#f4f7fb 100%);overflow:hidden;}#hermes-mobile-inputbar{display:grid;grid-template-columns:auto 1fr auto auto;gap:7px;align-items:center;background:rgba(255,255,255,.9);border:1px solid rgba(210,219,232,.95);border-radius:25px;padding:5px 6px 5px 8px;box-shadow:0 14px 34px rgba(31,41,55,.11);backdrop-filter:blur(18px);}#hermes-mobile-inputbar button{position:relative;border:0;border-radius:999px;width:38px;height:38px;background:#eef4ff;color:#2563eb;font-size:18px;font-weight:850;}#hermes-mobile-inputbar button.primary{background:linear-gradient(135deg,#4285f4,#9b72cb);color:#fff;}#hermes-mobile-inputbar button.tts-off::after{content:\"\";position:absolute;left:8px;right:8px;top:18px;height:3px;border-radius:999px;background:#ef4444;transform:rotate(-42deg);box-shadow:0 0 0 1px rgba(255,255,255,.72);}#hermes-mobile-inputbar button.tts-on{background:#dcfce7;color:#15803d;}#hermes-mobile-input{min-width:0;min-height:38px;max-height:88px;border:0;background:transparent;color:#172033;padding:7px 4px;font:15px/1.35 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;resize:none;outline:none;}",
       "#hermes-mobile-attachment-row{display:flex;gap:8px;overflow:auto;padding:0 4px 8px;scrollbar-width:none;}#hermes-mobile-attachment-row::-webkit-scrollbar{display:none;}.hermes-mobile-attachment{flex:0 0 auto;max-width:220px;display:flex;align-items:center;gap:7px;border:1px solid rgba(147,197,253,.9);border-radius:999px;background:rgba(239,246,255,.92);color:#1d4ed8;padding:7px 9px;font-size:12px;font-weight:720;box-shadow:0 8px 18px rgba(37,99,235,.08);}.hermes-mobile-attachment span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}.hermes-mobile-attachment button{border:0;background:rgba(37,99,235,.12);color:#1d4ed8;border-radius:999px;width:22px;height:22px;font-size:14px;line-height:1;padding:0;}.hermes-mobile-row-actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end;}.hermes-mobile-form select,.hermes-mobile-form textarea{min-height:44px;border:1px solid rgba(210,219,232,.95);border-radius:14px;padding:0 12px;background:rgba(255,255,255,.88);color:#172033;font-size:14px;outline:none;}.hermes-mobile-form textarea{min-height:84px;padding:10px 12px;resize:vertical;font:14px/1.45 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}.hermes-mobile-tool-grid{display:grid;grid-template-columns:1fr;gap:9px;}.hermes-mobile-tool{min-height:74px;border:1px solid rgba(218,225,235,.88);border-radius:18px;background:rgba(255,255,255,.78);padding:12px;text-align:left;box-shadow:0 10px 24px rgba(31,41,55,.05);overflow-wrap:anywhere;}.hermes-mobile-tool strong{display:block;font-size:14px;line-height:1.25;color:#172033;}.hermes-mobile-tool span{display:block;margin-top:6px;color:#667085;font-size:12px;line-height:1.35;}",
       "#hermes-mobile-shell.dark{background:radial-gradient(circle at 12% 0%,rgba(59,130,246,.18),transparent 30%),radial-gradient(circle at 94% 16%,rgba(236,72,153,.14),transparent 28%),linear-gradient(180deg,#09111f 0%,#0f172a 100%);color:#f8fafc;}#hermes-mobile-shell.dark #hermes-mobile-top.gemini{background:rgba(15,23,42,.86);}#hermes-mobile-shell.dark #hermes-mobile-subtitle,#hermes-mobile-shell.dark #hermes-mobile-hero-sub,#hermes-mobile-shell.dark .hermes-mobile-panel p,#hermes-mobile-shell.dark .hermes-mobile-row-main span,#hermes-mobile-shell.dark .hermes-mobile-tool span{color:#d7e3f8;}#hermes-mobile-shell.dark #hermes-mobile-menu-button,#hermes-mobile-shell.dark #hermes-mobile-settings-button,#hermes-mobile-shell.dark #hermes-mobile-inputbar,#hermes-mobile-shell.dark .hermes-mobile-panel,#hermes-mobile-shell.dark .hermes-mobile-row,#hermes-mobile-shell.dark .hermes-mobile-tool,#hermes-mobile-shell.dark .hermes-mobile-suggestion{background:rgba(15,23,42,.9);border-color:rgba(96,165,250,.42);color:#f8fafc;}#hermes-mobile-shell.dark .hermes-mobile-bubble.assistant{background:transparent;border:0;box-shadow:none;color:#f8fafc;}#hermes-mobile-shell.dark .hermes-mobile-panel h2,#hermes-mobile-shell.dark .hermes-mobile-row-main strong,#hermes-mobile-shell.dark .hermes-mobile-tool strong{color:#ffffff;}#hermes-mobile-shell.dark #hermes-mobile-bottom{background:linear-gradient(180deg,rgba(15,23,42,0),#0f172a 24%,#0f172a 100%);}#hermes-mobile-shell.dark #hermes-mobile-input,#hermes-mobile-shell.dark .hermes-mobile-form input,#hermes-mobile-shell.dark .hermes-mobile-form select,#hermes-mobile-shell.dark .hermes-mobile-form textarea{color:#ffffff;background:rgba(15,23,42,.82);border-color:#60a5fa;}#hermes-mobile-shell.dark #hermes-mobile-input::placeholder{color:#cbd5e1;}#hermes-mobile-shell.dark #hermes-mobile-drawer{background:rgba(15,23,42,.98);color:#f8fafc;}#hermes-mobile-shell.dark .hermes-mobile-drawer-item{color:#f8fafc;}#hermes-mobile-shell.dark .hermes-mobile-drawer-item small{color:#d7e3f8;}#hermes-mobile-shell.dark .hermes-mobile-drawer-item.active{background:#1d4ed8;color:#fff;box-shadow:inset 0 0 0 1px rgba(147,197,253,.36);}#hermes-mobile-shell.dark .hermes-mobile-drawer-item.active small{color:#dbeafe;}#hermes-mobile-shell.dark .hermes-mobile-drawer-item .icon{background:rgba(96,165,250,.18);color:#bfdbfe;}#hermes-mobile-shell.dark .hermes-mobile-drawer-item.active .icon{background:rgba(255,255,255,.18);color:#fff;}#hermes-mobile-shell.dark .hermes-mobile-tool:focus,#hermes-mobile-shell.dark .hermes-mobile-drawer-item:focus,#hermes-mobile-shell.dark .hermes-mobile-tool:focus-visible,#hermes-mobile-shell.dark .hermes-mobile-drawer-item:focus-visible{outline:none;box-shadow:inset 0 0 0 1px rgba(96,165,250,.62),0 0 0 3px rgba(37,99,235,.22);}#hermes-mobile-shell.dark .hermes-mobile-empty{background:rgba(30,41,59,.82);border-color:#60a5fa;color:#dbeafe;}#hermes-mobile-shell.dark #hermes-mobile-drawer-settings{background:#1d4ed8;color:#fff;}",
-      "#hermes-mobile-shell.dark .hermes-mobile-reasoning-card{background:rgba(30,41,59,.72);border-color:rgba(129,140,248,.34);color:#cbd5e1;}#hermes-mobile-shell.dark .hermes-mobile-answer-text{color:#f8fafc;}#hermes-mobile-shell.dark .hermes-mobile-answer-text.pending{color:#cbd5e1;}",
+      "#hermes-mobile-shell.dark .hermes-mobile-reasoning-card{background:rgba(30,41,59,.72);border-color:rgba(129,140,248,.42);color:#f1f5f9;}#hermes-mobile-shell.dark .hermes-mobile-reasoning-card p{color:#e2e8f0;}#hermes-mobile-shell.dark .hermes-mobile-answer-text{color:#f8fafc;}#hermes-mobile-shell.dark .hermes-mobile-answer-text.pending{color:#cbd5e1;}",
       "#hermes-mobile-drawer-backdrop{position:absolute;inset:0;z-index:20;background:rgba(15,23,42,.26);opacity:0;pointer-events:none;transition:opacity .18s ease;}#hermes-mobile-drawer{position:absolute;z-index:21;left:0;top:0;bottom:0;width:min(84vw,340px);background:rgba(255,255,255,.94);box-shadow:28px 0 60px rgba(31,41,55,.18);transform:translateX(-102%);transition:transform .22s ease;border-radius:0 24px 24px 0;padding:calc(16px + var(--hermes-safe-top)) 14px calc(18px + var(--hermes-safe-bottom)) calc(14px + var(--hermes-safe-left));display:grid;grid-template-rows:auto 1fr auto;gap:14px;backdrop-filter:blur(22px);}#hermes-mobile-shell.drawer-open #hermes-mobile-drawer{transform:translateX(0);}#hermes-mobile-shell.drawer-open #hermes-mobile-drawer-backdrop{opacity:1;pointer-events:auto;}#hermes-mobile-drawer-head{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:12px;}#hermes-mobile-terminal-chip{border:0;border-radius:18px;min-width:82px;min-height:58px;padding:6px 9px;background:#111827;color:#fff;display:grid;place-items:center;gap:2px;box-shadow:0 14px 30px rgba(15,23,42,.18);}#hermes-mobile-terminal-chip span{display:block;font-size:18px;line-height:1;}#hermes-mobile-terminal-chip strong{display:block;font-size:12px;line-height:1.15;color:#fff;}#hermes-mobile-drawer-brand{display:flex;align-items:center;gap:10px;min-width:0;}#hermes-mobile-drawer-head .mark{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#4285f4,#9b72cb 45%,#fbbc04);color:#fff;font-weight:850;}#hermes-mobile-drawer-head strong{display:block;font-size:17px;}#hermes-mobile-drawer-head span{display:block;color:#697386;font-size:12px;margin-top:2px;}#hermes-mobile-drawer-list{display:grid;align-content:start;gap:8px;overflow:auto;}.hermes-mobile-drawer-group{padding:10px 12px 2px;color:#7b8796;font-size:12px;font-weight:760;}.hermes-mobile-drawer-item{width:100%;border:0;border-radius:16px;min-height:54px;padding:0 12px;background:transparent;color:#172033;display:flex;align-items:center;gap:12px;text-align:left;font-size:15px;font-weight:720;}.hermes-mobile-drawer-item small{display:block;color:#697386;font-size:12px;font-weight:520;margin-top:2px;}.hermes-mobile-drawer-item .icon{width:32px;height:32px;border-radius:999px;background:#eef4ff;color:#2563eb;display:grid;place-items:center;font-size:16px;flex:0 0 auto;}.hermes-mobile-drawer-item.active{background:#eef4ff;}#hermes-mobile-drawer-foot{display:flex;justify-content:flex-start;}#hermes-mobile-drawer-settings{border:0;border-radius:999px;width:46px;height:46px;background:#eef4ff;color:#2563eb;font-size:20px;box-shadow:0 10px 24px rgba(37,99,235,.12);}",
-      "#hermes-mobile-drawer-backdrop{position:absolute;inset:0;z-index:20;background:rgba(15,23,42,.28);opacity:0;pointer-events:none;transition:opacity .18s ease;}#hermes-mobile-drawer{position:absolute;z-index:21;left:0;top:0;bottom:0;width:min(88vw,360px);background:rgba(250,251,253,.98);box-shadow:28px 0 60px rgba(31,41,55,.2);transform:translateX(-102%);transition:transform .22s ease;border-radius:0 22px 22px 0;padding:calc(14px + var(--hermes-safe-top)) 14px calc(12px + var(--hermes-safe-bottom)) calc(14px + var(--hermes-safe-left));display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:12px;backdrop-filter:blur(24px);}#hermes-mobile-shell.drawer-open #hermes-mobile-drawer{transform:translateX(0);}#hermes-mobile-shell.drawer-open #hermes-mobile-drawer-backdrop{opacity:1;pointer-events:auto;}#hermes-mobile-drawer-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 4px;}#hermes-mobile-drawer-brand{display:flex;align-items:center;gap:10px;min-width:0;}#hermes-mobile-drawer-head .mark{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#4285f4,#9b72cb 45%,#fbbc04);color:#fff;font-weight:850;}#hermes-mobile-drawer-head strong{display:block;font-size:18px;}#hermes-mobile-drawer-head span{display:block;color:#7a8496;font-size:12px;margin-top:2px;}#hermes-mobile-drawer-close{width:40px;height:40px;border:0;border-radius:999px;background:transparent;color:#475569;font-size:24px;}#hermes-mobile-drawer-actions{display:grid;gap:9px;}#hermes-mobile-drawer-new{width:100%;min-height:52px;border:0;border-radius:18px;background:#eef0f3;color:#172033;display:flex;align-items:center;gap:13px;padding:0 16px;font-size:16px;font-weight:760;text-align:left;}#hermes-mobile-drawer-new .icon{font-size:24px;font-weight:500;}#hermes-mobile-drawer-search-wrap{position:relative;}#hermes-mobile-drawer-search-wrap .icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:20px;color:#7a8496;pointer-events:none;}#hermes-mobile-drawer-search{width:100%;height:48px;border:0;border-radius:16px;background:#f1f3f6;color:#172033;padding:0 14px 0 44px;font-size:15px;outline:none;}#hermes-mobile-drawer-search:focus{box-shadow:inset 0 0 0 2px rgba(66,133,244,.55);background:#fff;}#hermes-mobile-drawer-list{min-height:0;overflow:auto;overflow-x:hidden;padding:2px 2px 6px;}.hermes-mobile-drawer-group{padding:10px 8px 7px;color:#8792a5;font-size:12px;font-weight:760;}.hermes-mobile-drawer-session{width:100%;border:0;border-radius:14px;background:transparent;color:#172033;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;text-align:left;padding:11px 10px;margin-bottom:3px;}.hermes-mobile-drawer-session:active{background:#eef0f3;}.hermes-mobile-drawer-session.active{background:#e9edf5;}.hermes-mobile-drawer-session-main{min-width:0;width:100%;border:0;background:transparent;color:inherit;text-align:left;padding:0;font:inherit;}.hermes-mobile-drawer-session strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15px;font-weight:680;}.hermes-mobile-drawer-session small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#7a8496;font-size:11px;margin-top:4px;}.hermes-mobile-drawer-session-delete{width:32px;height:32px;border:0;border-radius:10px;background:transparent;color:#94a3b8;font-size:18px;opacity:.78;}.hermes-mobile-drawer-session-delete:active{background:#fee2e2;color:#dc2626;}.hermes-mobile-drawer-empty{padding:26px 12px;text-align:center;color:#8792a5;font-size:13px;line-height:1.6;}#hermes-mobile-drawer-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;border-top:1px solid rgba(210,219,232,.8);padding:12px 4px 0;}#hermes-mobile-drawer-profile{min-width:0;display:flex;align-items:center;gap:10px;}#hermes-mobile-drawer-profile .avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#172033,#475569);color:#fff;font-weight:850;}#hermes-mobile-drawer-profile strong{display:block;font-size:14px;}#hermes-mobile-drawer-profile span{display:block;color:#7a8496;font-size:11px;margin-top:2px;}#hermes-mobile-drawer-settings{width:44px;height:44px;border:0;border-radius:14px;background:transparent;color:#172033;font-size:23px;box-shadow:none;}#hermes-mobile-drawer-settings:active{background:#e9edf5;}.hermes-mobile-community-card{border:1px solid rgba(147,197,253,.72)!important;background:linear-gradient(135deg,rgba(219,234,254,.82),rgba(243,232,255,.82))!important;}.hermes-mobile-community-card .hermes-mobile-form-actions{justify-content:flex-start;margin-top:14px;}.hermes-mobile-settings-hero{padding:2px 2px 4px;}.hermes-mobile-settings-hero h2{font-size:28px;margin:0 0 6px;}.hermes-mobile-settings-hero p{margin:0;color:#667085;font-size:13px;}",
-      "#hermes-mobile-shell.dark #hermes-mobile-drawer-new,#hermes-mobile-shell.dark #hermes-mobile-drawer-search{background:#202838;color:#f8fafc;}#hermes-mobile-shell.dark #hermes-mobile-drawer-search::placeholder{color:#94a3b8;}#hermes-mobile-shell.dark .hermes-mobile-drawer-session{color:#f8fafc;}#hermes-mobile-shell.dark .hermes-mobile-drawer-session.active,#hermes-mobile-shell.dark .hermes-mobile-drawer-session:active{background:#222c3e;}#hermes-mobile-shell.dark .hermes-mobile-drawer-session small,#hermes-mobile-shell.dark #hermes-mobile-drawer-profile span{color:#94a3b8;}#hermes-mobile-shell.dark #hermes-mobile-drawer-close,#hermes-mobile-shell.dark #hermes-mobile-drawer-settings{color:#e2e8f0;}#hermes-mobile-shell.dark #hermes-mobile-drawer-settings:active{background:#222c3e;}#hermes-mobile-shell.dark .hermes-mobile-community-card{background:linear-gradient(135deg,rgba(30,64,175,.3),rgba(88,28,135,.3))!important;border-color:rgba(96,165,250,.38)!important;}",
+      "#hermes-mobile-drawer-backdrop{position:absolute;inset:0;z-index:20;background:rgba(15,23,42,.28);opacity:0;pointer-events:none;transition:opacity .18s ease;}#hermes-mobile-drawer{position:absolute;z-index:21;left:0;top:0;bottom:0;width:min(88vw,360px);background:rgba(250,251,253,.98);box-shadow:28px 0 60px rgba(31,41,55,.2);transform:translateX(-102%);transition:transform .22s ease;border-radius:0 22px 22px 0;padding:calc(14px + var(--hermes-safe-top)) 14px calc(12px + var(--hermes-safe-bottom)) calc(14px + var(--hermes-safe-left));display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:12px;backdrop-filter:blur(24px);}#hermes-mobile-shell.drawer-open #hermes-mobile-drawer{transform:translateX(0);}#hermes-mobile-shell.drawer-open #hermes-mobile-drawer-backdrop{opacity:1;pointer-events:auto;}#hermes-mobile-drawer-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 4px;}#hermes-mobile-drawer-brand{display:flex;align-items:center;gap:10px;min-width:0;}#hermes-mobile-drawer-head .mark{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#4285f4,#9b72cb 45%,#fbbc04);color:#fff;font-weight:850;}#hermes-mobile-drawer-head strong{display:block;font-size:18px;}#hermes-mobile-drawer-head span{display:block;color:#7a8496;font-size:12px;margin-top:2px;}#hermes-mobile-drawer-close{width:40px;height:40px;border:0;border-radius:999px;background:transparent;color:#475569;font-size:24px;}#hermes-mobile-drawer-actions{display:grid;gap:9px;}#hermes-mobile-drawer-new,#hermes-mobile-drawer-phone{width:100%;min-height:52px;border:0;border-radius:18px;color:#172033;display:flex;align-items:center;gap:13px;padding:0 16px;font-size:16px;font-weight:760;text-align:left;}#hermes-mobile-drawer-phone{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;box-shadow:0 10px 24px rgba(37,99,235,.24);}#hermes-mobile-drawer-new{background:#eef0f3;}#hermes-mobile-drawer-new .icon,#hermes-mobile-drawer-phone .icon{font-size:24px;font-weight:500;}#hermes-mobile-drawer-search-wrap{position:relative;}#hermes-mobile-drawer-search-wrap .icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:20px;color:#7a8496;pointer-events:none;}#hermes-mobile-drawer-search{width:100%;height:48px;border:0;border-radius:16px;background:#f1f3f6;color:#172033;padding:0 14px 0 44px;font-size:15px;outline:none;}#hermes-mobile-drawer-search:focus{box-shadow:inset 0 0 0 2px rgba(66,133,244,.55);background:#fff;}#hermes-mobile-drawer-list{min-height:0;overflow:auto;overflow-x:hidden;padding:2px 2px 6px;}.hermes-mobile-drawer-group{padding:10px 8px 7px;color:#8792a5;font-size:12px;font-weight:760;}.hermes-mobile-drawer-session{width:100%;border:0;border-radius:14px;background:transparent;color:#172033;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;text-align:left;padding:11px 10px;margin-bottom:3px;}.hermes-mobile-drawer-session:active{background:#eef0f3;}.hermes-mobile-drawer-session.active{background:#e9edf5;}.hermes-mobile-drawer-session-main{min-width:0;width:100%;border:0;background:transparent;color:inherit;text-align:left;padding:0;font:inherit;}.hermes-mobile-drawer-session strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15px;font-weight:680;}.hermes-mobile-drawer-session small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#7a8496;font-size:11px;margin-top:4px;}.hermes-mobile-drawer-session-delete{width:32px;height:32px;border:0;border-radius:10px;background:transparent;color:#94a3b8;font-size:18px;opacity:.78;}.hermes-mobile-drawer-session-delete:active{background:#fee2e2;color:#dc2626;}.hermes-mobile-drawer-empty{padding:26px 12px;text-align:center;color:#8792a5;font-size:13px;line-height:1.6;}#hermes-mobile-drawer-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;border-top:1px solid rgba(210,219,232,.8);padding:12px 4px 0;}#hermes-mobile-drawer-profile{min-width:0;display:flex;align-items:center;gap:10px;}#hermes-mobile-drawer-profile .avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#172033,#475569);color:#fff;font-weight:850;}#hermes-mobile-drawer-profile strong{display:block;font-size:14px;}#hermes-mobile-drawer-profile span{display:block;color:#7a8496;font-size:11px;margin-top:2px;}#hermes-mobile-drawer-settings{width:44px;height:44px;border:0;border-radius:14px;background:transparent;color:#172033;font-size:23px;box-shadow:none;}#hermes-mobile-drawer-settings:active{background:#e9edf5;}.hermes-mobile-community-card{border:1px solid rgba(147,197,253,.72)!important;background:linear-gradient(135deg,rgba(219,234,254,.82),rgba(243,232,255,.82))!important;}.hermes-mobile-community-card .hermes-mobile-form-actions{justify-content:flex-start;margin-top:14px;}.hermes-mobile-settings-hero{padding:2px 2px 4px;}.hermes-mobile-settings-hero h2{font-size:28px;margin:0 0 6px;}.hermes-mobile-settings-hero p{margin:0;color:#667085;font-size:13px;}",
+      "#hermes-mobile-shell.dark #hermes-mobile-drawer-new,#hermes-mobile-shell.dark #hermes-mobile-drawer-search{background:#202838;color:#f8fafc;}#hermes-mobile-shell.dark #hermes-mobile-drawer-phone{background:linear-gradient(135deg,#1d4ed8,#4338ca);color:#fff;}#hermes-mobile-shell.dark #hermes-mobile-drawer-search::placeholder{color:#94a3b8;}#hermes-mobile-shell.dark .hermes-mobile-drawer-session{color:#f8fafc;}#hermes-mobile-shell.dark .hermes-mobile-drawer-session.active,#hermes-mobile-shell.dark .hermes-mobile-drawer-session:active{background:#222c3e;}#hermes-mobile-shell.dark .hermes-mobile-drawer-session small,#hermes-mobile-shell.dark #hermes-mobile-drawer-profile span{color:#94a3b8;}#hermes-mobile-shell.dark #hermes-mobile-drawer-close,#hermes-mobile-shell.dark #hermes-mobile-drawer-settings{color:#e2e8f0;}#hermes-mobile-shell.dark #hermes-mobile-drawer-settings:active{background:#222c3e;}#hermes-mobile-shell.dark .hermes-mobile-community-card{background:linear-gradient(135deg,rgba(30,64,175,.3),rgba(88,28,135,.3))!important;border-color:rgba(96,165,250,.38)!important;}",
+      ".hermes-mobile-adb-status{display:flex;align-items:flex-start;gap:10px}.hermes-mobile-adb-status .dot{width:11px;height:11px;border-radius:50%;margin-top:5px;background:#94a3b8;box-shadow:0 0 0 5px rgba(148,163,184,.13)}.hermes-mobile-adb-status.connected .dot{background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.14)}.hermes-mobile-adb-status.error .dot{background:#ef4444;box-shadow:0 0 0 5px rgba(239,68,68,.13)}.hermes-mobile-guide{display:grid;gap:10px;counter-reset:adb-step}.hermes-mobile-guide-step{position:relative;padding:12px 12px 12px 48px;border-radius:16px;background:rgba(148,163,184,.08);border:1px solid rgba(148,163,184,.2)}.hermes-mobile-guide-step::before{counter-increment:adb-step;content:counter(adb-step);position:absolute;left:12px;top:12px;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#2563eb;color:#fff;font-size:12px;font-weight:800}.hermes-mobile-guide-step strong{display:block;font-size:14px}.hermes-mobile-guide-step p{margin:5px 0 0!important;font-size:12px!important}.hermes-mobile-adb-note{padding:10px 12px;border-radius:14px;background:rgba(245,158,11,.11);border:1px solid rgba(245,158,11,.28);color:#92400e;font-size:12px;line-height:1.5}#hermes-mobile-shell.dark .hermes-mobile-adb-note{color:#fde68a;background:rgba(245,158,11,.1)}",
       "@media(max-width:420px){#hermes-android-boot-card{width:min(88vw,380px);gap:14px;}#hermes-android-boot-title{font-size:20px;}#hermes-android-boot-text{font-size:14px;}#hermes-android-boot-log{font-size:12px;}#hermes-android-boot-status{gap:6px;}#hermes-android-boot-status>div{padding:8px 6px;}}",
       "@keyframes hermesAndroidBoot{0%{transform:translateX(-110%)}100%{transform:translateX(270%)}}"
     ].join("");
@@ -806,12 +808,18 @@
   function serializeAgentOutput(parts) {
     var thinking = parts && parts.thinking ? String(parts.thinking).trim() : "";
     var answer = parts && parts.answer ? String(parts.answer).trim() : "";
+    var tools = parts && Array.isArray(parts.tools) ? parts.tools : [];
+    var streaming = Boolean(parts && parts.streaming);
     if (!thinking && !answer) {
       thinking = "正在流式生成...";
     }
     return [
       "<<<HERMES_THINKING>>>",
       thinking,
+      "<<<HERMES_TOOLS>>>",
+      JSON.stringify(tools),
+      "<<<HERMES_STATE>>>",
+      streaming ? "streaming" : "complete",
       "<<<HERMES_ANSWER>>>",
       answer
     ].join("\n").trim();
@@ -820,22 +828,41 @@
   function parseSerializedAgentOutput(text) {
     var raw = String(text || "");
     if (raw.indexOf("<<<HERMES_THINKING>>>") < 0 && raw.indexOf("<<<HERMES_ANSWER>>>") < 0) {
-      return { thinking: "", answer: raw.trim(), structured: false };
+      return { thinking: "", tools: [], answer: raw.trim(), streaming: false, structured: false };
     }
     var thinking = "";
+    var tools = [];
+    var streaming = false;
     var answer = "";
     var thinkingIndex = raw.indexOf("<<<HERMES_THINKING>>>");
+    var toolsIndex = raw.indexOf("<<<HERMES_TOOLS>>>");
+    var stateIndex = raw.indexOf("<<<HERMES_STATE>>>");
     var answerIndex = raw.indexOf("<<<HERMES_ANSWER>>>");
     if (thinkingIndex >= 0) {
       var thinkingStart = thinkingIndex + "<<<HERMES_THINKING>>>".length;
-      var thinkingEnd = answerIndex >= 0 ? answerIndex : raw.length;
+      var thinkingEnd = toolsIndex >= 0 ? toolsIndex : (stateIndex >= 0 ? stateIndex : (answerIndex >= 0 ? answerIndex : raw.length));
       thinking = raw.slice(thinkingStart, thinkingEnd).trim();
+    }
+    if (toolsIndex >= 0) {
+      var toolsStart = toolsIndex + "<<<HERMES_TOOLS>>>".length;
+      var toolsEnd = stateIndex >= 0 ? stateIndex : (answerIndex >= 0 ? answerIndex : raw.length);
+      try {
+        var parsedTools = JSON.parse(raw.slice(toolsStart, toolsEnd).trim() || "[]");
+        tools = Array.isArray(parsedTools) ? parsedTools : [];
+      } catch (error) {
+        tools = [];
+      }
+    }
+    if (stateIndex >= 0) {
+      var stateStart = stateIndex + "<<<HERMES_STATE>>>".length;
+      var stateEnd = answerIndex >= 0 ? answerIndex : raw.length;
+      streaming = raw.slice(stateStart, stateEnd).trim() === "streaming";
     }
     if (answerIndex >= 0) {
       answer = raw.slice(answerIndex + "<<<HERMES_ANSWER>>>".length).trim();
     }
     answer = dedupeAnswerText(answer, "");
-    return { thinking: thinking, answer: answer, structured: true };
+    return { thinking: thinking, tools: tools, answer: answer, streaming: streaming, structured: true };
   }
 
   function buildPtyWebSocketUrl() {
@@ -978,7 +1005,7 @@
       "  <div id=\"hermes-mobile-drawer-backdrop\" data-action=\"close-drawer\"></div>",
       "  <aside id=\"hermes-mobile-drawer\" aria-label=\"Hermes 导航抽屉\">",
       "    <div id=\"hermes-mobile-drawer-head\"><div id=\"hermes-mobile-drawer-brand\"><div class=\"mark\">H</div><div><strong>Hermes</strong><span>你的移动智能体</span></div></div><button id=\"hermes-mobile-drawer-close\" type=\"button\" data-action=\"close-drawer\" aria-label=\"关闭导航\">×</button></div>",
-      "    <div id=\"hermes-mobile-drawer-actions\"><button id=\"hermes-mobile-drawer-new\" type=\"button\" data-action=\"new-session\"><span class=\"icon\">✎</span><span>发起新对话</span></button><label id=\"hermes-mobile-drawer-search-wrap\"><span class=\"icon\">⌕</span><input id=\"hermes-mobile-drawer-search\" type=\"search\" placeholder=\"搜索会话\" autocomplete=\"off\"></label></div>",
+      "    <div id=\"hermes-mobile-drawer-actions\"><button id=\"hermes-mobile-drawer-phone\" type=\"button\" data-action=\"view\" data-view=\"phone-control\"><span class=\"icon\">▣</span><span>接管手机</span></button><button id=\"hermes-mobile-drawer-new\" type=\"button\" data-action=\"new-session\"><span class=\"icon\">✎</span><span>发起新对话</span></button><label id=\"hermes-mobile-drawer-search-wrap\"><span class=\"icon\">⌕</span><input id=\"hermes-mobile-drawer-search\" type=\"search\" placeholder=\"搜索会话\" autocomplete=\"off\"></label></div>",
       "    <div id=\"hermes-mobile-drawer-list\"></div>",
       "    <div id=\"hermes-mobile-drawer-foot\"><div id=\"hermes-mobile-drawer-profile\"><div class=\"avatar\">H</div><div><strong>Hermes Mobile</strong><span>本机智能体</span></div></div><button id=\"hermes-mobile-drawer-settings\" type=\"button\" data-action=\"view\" data-view=\"settings\" aria-label=\"设置\">⚙</button></div>",
       "  </aside>",
@@ -1020,6 +1047,7 @@
     var lastSpokenAssistantText = "";
     var mobileRpcSessionId = sessions[0] && sessions[0].backendSessionId || "";
     var mobileRpcListenerSocket = null;
+    var androidAdbState = { loading: false, error: "", data: null, message: "" };
     var featureData = {
       resources: { loading: false, error: "", data: null, path: "", rootPath: "" },
       automation: { loading: false, error: "", data: null },
@@ -1068,7 +1096,6 @@
 
     function persistActiveSession() {
       var session = activeSession();
-      session.backendSessionId = mobileRpcSessionId || "";
       session.messages = messages.slice(-40);
       session.updatedAt = Date.now();
       var firstUser = messages.filter(function (message) { return message.role === "user" && message.content; })[0];
@@ -1089,6 +1116,10 @@
         // ignore stale listener close failures
       }
       mobileRpcListenerSocket = null;
+    }
+
+    function isLegacyBackendSessionId(value) {
+      return /^[0-9a-f]{8}$/i.test(String(value || "").trim());
     }
 
     function setBusy(busy) {
@@ -1410,6 +1441,9 @@
       setDrawer(false);
       renderView();
       loadFeatureData(currentView);
+      if (currentView === "phone-control") {
+        window.setTimeout(refreshAndroidAdbStatus, 80);
+      }
     }
 
     function handleMobileBack() {
@@ -1486,14 +1520,16 @@
         var settled = false;
         var answer = "";
         var reasoning = "";
+        var toolEvents = [];
         var asyncAnswer = "";
         var asyncReasoning = "";
+        var asyncToolEvents = [];
         var asyncAssistantIndex = -1;
         var createId = "mobile-create-" + Date.now();
         var resumeId = "mobile-resume-" + Date.now();
         var submitId = "mobile-submit-" + Date.now();
-        var activeSid = mobileRpcSessionId || "";
-        var retriedStaleSession = false;
+        var activeSid = activeSession().backendSessionId || "";
+        var migratingLegacySession = false;
         var timeout = 0;
         var renderTimer = 0;
         var pendingStructuredText = "";
@@ -1506,6 +1542,8 @@
         function renderStructured(immediate) {
           pendingStructuredText = serializeAgentOutput({
             thinking: reasoning || (answer ? "" : "正在流式生成..."),
+            tools: toolEvents,
+            streaming: true,
             answer: answer
           });
           if (immediate) {
@@ -1593,7 +1631,7 @@
           if (!answer.trim() && !reasoning.trim()) {
             updateAssistantMessage(assistantIndex, "Hermes 暂无更多输出。");
           } else {
-            var finalOutput = serializeAgentOutput({ thinking: reasoning, answer: answer });
+            var finalOutput = serializeAgentOutput({ thinking: reasoning, tools: toolEvents, streaming: false, answer: answer });
             var queuedFinalSpeech = queueStreamedSpeech(true);
             updateAssistantMessage(assistantIndex, finalOutput);
             if (queuedFinalSpeech || streamedSpeechQueued) {
@@ -1609,7 +1647,7 @@
           if (asyncAssistantIndex >= 0 && messages[asyncAssistantIndex]) {
             return asyncAssistantIndex;
           }
-          messages.push({ role: "assistant", content: serializeAgentOutput({ thinking: "正在接收后台任务结果...", answer: "" }) });
+          messages.push({ role: "assistant", content: serializeAgentOutput({ thinking: "正在接收后台任务结果...", tools: [], streaming: true, answer: "" }) });
           asyncAssistantIndex = messages.length - 1;
           currentView = "chat";
           renderView();
@@ -1620,6 +1658,8 @@
           var index = ensureAsyncAssistantMessage();
           updateAssistantMessage(index, serializeAgentOutput({
             thinking: asyncReasoning || (asyncAnswer ? "" : "正在接收后台任务结果..."),
+            tools: asyncToolEvents,
+            streaming: !persist,
             answer: asyncAnswer
           }), { persist: Boolean(persist) });
         }
@@ -1635,6 +1675,44 @@
             method: method,
             params: params || {}
           }));
+        }
+
+        function backendSeedMessages() {
+          var seed = [];
+          messages.slice(0, Math.max(0, assistantIndex - 1)).forEach(function (message) {
+            var content = parseSerializedAgentOutput(message.content || "").answer || message.content || "";
+            if (message.role === "assistant" && /无法恢复原会话|原会话暂时无法连接|正在连接本机 Hermes Agent/.test(content)) {
+              if (seed.length && seed[seed.length - 1].role === "user") seed.pop();
+              return;
+            }
+            if (content) seed.push({ role: message.role, content: content });
+          });
+          return seed;
+        }
+
+        function createBackendSession() {
+          sendRpc(createId, "session.create", {
+            close_on_disconnect: false,
+            cols: 80,
+            messages: backendSeedMessages(),
+            source: "android-mobile"
+          });
+        }
+
+        function updateToolEvent(target, payload, status) {
+          var toolId = String(payload.tool_id || payload.id || payload.name || ("tool-" + Date.now()));
+          var found = target.filter(function (item) { return item.id === toolId; })[0];
+          if (!found) {
+            found = { id: toolId, name: String(payload.name || "tool"), context: "", status: "running" };
+            target.push(found);
+          }
+          found.name = String(payload.name || found.name || "tool");
+          found.context = String(payload.context || payload.preview || found.context || "");
+          found.status = status || found.status || "running";
+          if (payload.summary) found.summary = String(payload.summary);
+          if (payload.duration_s != null) found.duration = Number(payload.duration_s);
+          if (payload.result_text) found.result = String(payload.result_text).slice(0, 1200);
+          if (payload.error) found.error = String(payload.error);
         }
 
         function submitPrompt() {
@@ -1668,11 +1746,7 @@
             });
             return;
           }
-          sendRpc(createId, "session.create", {
-            close_on_disconnect: false,
-            cols: 80,
-            source: "android-mobile"
-          });
+          createBackendSession();
         };
 
         ws.onmessage = function (event) {
@@ -1694,6 +1768,22 @@
                 reasoning = statusText;
                 renderStructured();
               }
+            } else if (params.type === "reasoning.delta" || params.type === "reasoning.available") {
+              if (settled) {
+                asyncReasoning = params.type === "reasoning.delta"
+                  ? appendAgentDelta(asyncReasoning, payload.text || "")
+                  : String(payload.text || asyncReasoning || "");
+                renderAsyncOutput(false);
+              } else {
+                reasoning = params.type === "reasoning.delta"
+                  ? appendAgentDelta(reasoning, payload.text || "")
+                  : String(payload.text || reasoning || "");
+                renderStructured();
+              }
+            } else if (params.type === "tool.start" || params.type === "tool.progress" || params.type === "tool.complete") {
+              var targetTools = settled ? asyncToolEvents : toolEvents;
+              updateToolEvent(targetTools, payload, params.type === "tool.complete" ? (payload.error ? "error" : "complete") : "running");
+              if (settled) renderAsyncOutput(false); else renderStructured();
             } else if (params.type === "message.delta") {
               if (settled) {
                 asyncAnswer = appendAgentDelta(asyncAnswer, payload.text || "");
@@ -1719,6 +1809,7 @@
                 speakAssistantOutput(messages[asyncAssistantIndex] && messages[asyncAssistantIndex].content || asyncAnswer);
                 asyncAnswer = "";
                 asyncReasoning = "";
+                asyncToolEvents = [];
                 asyncAssistantIndex = -1;
               } else {
                 if (answer && normalizeDedupeText(completeText) === normalizeDedupeText(answer)) {
@@ -1749,20 +1840,21 @@
             mobileRpcSessionId = activeSid;
             activeSession().backendSessionId = storedSessionId;
             saveMobileSessions(sessions);
+            if (migratingLegacySession) setTemporarySubtitle("旧会话已修复");
             submitPrompt();
             return;
           }
           if (data.id === resumeId) {
             if (data.error) {
-              activeSid = "";
-              mobileRpcSessionId = "";
-              activeSession().backendSessionId = "";
-              saveMobileSessions(sessions);
-              sendRpc(createId, "session.create", {
-                close_on_disconnect: false,
-                cols: 80,
-                source: "android-mobile"
-              });
+              if (/session not found/i.test(String(data.error.message || "")) && isLegacyBackendSessionId(activeSession().backendSessionId) && !migratingLegacySession) {
+                migratingLegacySession = true;
+                activeSid = "";
+                mobileRpcSessionId = "";
+                setTemporarySubtitle("正在修复旧会话");
+                createBackendSession();
+                return;
+              }
+              fail("无法恢复原会话，已停止发送且不会自动新建会话。请稍后重试。\n" + (data.error.message || "session resume failed"));
               return;
             }
             activeSid = data.result && data.result.session_id || activeSid;
@@ -1774,19 +1866,7 @@
           }
           if (data.id === submitId && data.error) {
             var errorMessage = data.error.message || "本机 Hermes 无法发送消息。";
-            if (/session not found/i.test(errorMessage) && !retriedStaleSession) {
-              retriedStaleSession = true;
-              activeSid = "";
-              mobileRpcSessionId = "";
-              activeSession().backendSessionId = "";
-              saveMobileSessions(sessions);
-              sendRpc(createId, "session.create", {
-                close_on_disconnect: false,
-                cols: 80,
-                source: "android-mobile"
-              });
-              return;
-            }
+            if (/session not found/i.test(errorMessage)) errorMessage = "原会话暂时无法连接，已保留会话绑定且不会自动新建。请重新发送。";
             fail(errorMessage);
           }
         };
@@ -2214,8 +2294,16 @@
       }
       var html = ["<div class=\"hermes-mobile-bubble assistant hermes-mobile-agent-output\">"];
       if (parts.thinking) {
-        var thinkingPending = /^正在流式生成/.test(parts.thinking);
-        html.push("<div class=\"hermes-mobile-reasoning-card" + (thinkingPending ? " pending" : "") + "\">" + (thinkingPending ? "" : "<p>" + escapeHtml(parts.thinking) + "</p>") + "</div>");
+        var thinkingPending = parts.streaming && /^正在流式生成/.test(parts.thinking);
+        html.push("<details class=\"hermes-mobile-reasoning-card" + (thinkingPending ? " pending" : "") + (parts.streaming ? " streaming" : "") + "\"" + (parts.streaming ? " open" : "") + "><summary>" + (parts.streaming ? "正在思考…" : "思考过程") + "</summary>" + (thinkingPending ? "" : "<p>" + escapeHtml(parts.thinking) + "</p>") + "</details>");
+      }
+      if (parts.tools && parts.tools.length) {
+        html.push("<div class=\"hermes-mobile-tool-trace\">" + parts.tools.map(function (tool) {
+          var state = tool.status === "complete" ? "完成" : (tool.status === "error" ? "失败" : "运行中");
+          var detail = tool.summary || tool.error || tool.context || "";
+          var duration = tool.duration != null ? " · " + Number(tool.duration).toFixed(1) + "s" : "";
+          return "<details class=\"hermes-mobile-tool-call " + escapeHtml(tool.status || "running") + "\"" + (tool.status === "running" ? " open" : "") + "><summary><span>" + escapeHtml(tool.name || "tool") + "</span><em>" + state + duration + "</em></summary>" + (detail ? "<p>" + escapeHtml(detail) + "</p>" : "") + (tool.result ? "<pre>" + escapeHtml(tool.result) + "</pre>" : "") + "</details>";
+        }).join("") + "</div>");
       }
       html.push("<div class=\"hermes-mobile-answer-text" + (parts.answer ? "" : " pending") + "\">" + escapeHtml(cleanAgentDeltaText(parts.answer || "")) + "</div>");
       html.push("</div>");
@@ -2529,6 +2617,45 @@
       ].join("");
     }
 
+    function refreshAndroidAdbStatus() {
+      androidAdbState.loading = true;
+      androidAdbState.error = "";
+      renderView();
+      window.setTimeout(function () {
+        var result = callHermesAndroidJson("getAndroidAdbStatus");
+        androidAdbState.loading = false;
+        androidAdbState.data = result;
+        androidAdbState.error = result.error || "";
+        renderView();
+      }, 40);
+    }
+
+    function renderPhoneControlPage() {
+      var data = androidAdbState.data || {};
+      var connected = Boolean(data.connected);
+      var statusClass = androidAdbState.error ? " error" : (connected ? " connected" : "");
+      var statusTitle = androidAdbState.loading ? "正在检查 ADB 状态" : (connected ? "手机已连接" : "尚未连接手机");
+      var statusDetail = androidAdbState.error || androidAdbState.message || (connected ? (data.output || "ADB 已就绪") : "先完成无线调试配对，再填写连接地址和端口。");
+      var savedEndpoint = "";
+      try {
+        var storedHost = localStorage.getItem("hermes.mobile.adb.host") || "";
+        var storedPort = localStorage.getItem("hermes.mobile.adb.port") || "";
+        savedEndpoint = storedHost && storedPort ? storedHost + ":" + storedPort : "";
+      } catch (error) {
+        // ignore storage failures
+      }
+      return [
+        "<div class=\"hermes-mobile-section\">",
+        renderFeatureHeader("phone-control", "接管手机", "让本机 Hermes 通过无线 ADB 查看和操作这台 Android 手机。"),
+        "<div class=\"hermes-mobile-panel\"><div class=\"hermes-mobile-adb-status" + statusClass + "\"><span class=\"dot\"></span><div><h2>" + escapeHtml(statusTitle) + "</h2><p>" + escapeHtml(statusDetail) + "</p></div></div><div class=\"hermes-mobile-form-actions\"><button class=\"secondary\" type=\"button\" data-action=\"adb-refresh\">重新检查</button><button class=\"secondary\" type=\"button\" data-action=\"adb-test\">测试控制</button></div></div>",
+        "<div class=\"hermes-mobile-panel\"><h2>第一次使用</h2><div class=\"hermes-mobile-guide\"><div class=\"hermes-mobile-guide-step\"><strong>开启开发者模式</strong><p>打开系统设置 → 关于手机，连续点击“系统版本/MIUI 版本”约 7 次，直到提示已进入开发者模式。</p></div><div class=\"hermes-mobile-guide-step\"><strong>打开无线调试</strong><p>进入设置 → 更多设置/系统 → 开发者选项 → 无线调试，并打开开关。</p></div><div class=\"hermes-mobile-guide-step\"><strong>使用配对码配对</strong><p>点“使用配对码配对设备”。配对窗口关闭、返回或重新进入后，配对码和端口可能立即重置。</p></div></div><div class=\"hermes-mobile-form-actions\"><button class=\"secondary\" type=\"button\" data-action=\"adb-open-developer\">打开开发者选项</button><button class=\"primary\" type=\"button\" data-action=\"adb-open-wireless\">打开无线调试</button></div><div class=\"hermes-mobile-adb-note\">推荐先把 Hermes 与系统设置放进分屏，或将设置页以小窗打开。保持配对码窗口可见，再回到 Hermes 输入配对端口和 6 位配对码。</div></div>",
+        "<div class=\"hermes-mobile-panel\"><h2>第 1 步：配对</h2><div class=\"hermes-mobile-form\"><label>配对地址和端口<input id=\"hermes-mobile-adb-pair-endpoint\" placeholder=\"例如 192.168.1.8:37123\" inputmode=\"text\"></label><label>6 位配对码<input id=\"hermes-mobile-adb-pair-code\" placeholder=\"例如 123456\" inputmode=\"numeric\" maxlength=\"6\"></label><div class=\"hermes-mobile-form-actions\"><button class=\"primary\" type=\"button\" data-action=\"adb-pair\">开始配对</button></div></div></div>",
+        "<div class=\"hermes-mobile-panel\"><h2>第 2 步：连接</h2><p>回到无线调试主页，复制“IP 地址和端口”。注意这里的连接端口通常与刚才的配对端口不同。</p><div class=\"hermes-mobile-form\"><label>连接地址和端口<input id=\"hermes-mobile-adb-endpoint\" value=\"" + escapeHtml(savedEndpoint) + "\" placeholder=\"例如 192.168.1.8:40765\" inputmode=\"text\"></label><div class=\"hermes-mobile-form-actions\"><button class=\"primary\" type=\"button\" data-action=\"adb-connect\">连接手机</button></div></div></div>",
+        "<div class=\"hermes-mobile-panel\"><h2>使用说明</h2><p>连接成功后，Hermes Agent 会获得 <code>android_debug</code> 工具，可查看设备信息、截图、点击、输入、启动应用和执行 ADB Shell。涉及删除数据、卸载应用、恢复出厂设置等高风险操作仍应先征得你的确认。</p></div>",
+        "</div>"
+      ].join("");
+    }
+
     function renderFeaturePage(viewName) {
       var info = FEATURE_INFO[viewName] || ["功能入口", "该能力会继续接入本机 Hermes。"];
       if (viewName === "resources") {
@@ -2566,6 +2693,9 @@
       }
       if (viewName === "language") {
         return renderLanguagePage();
+      }
+      if (viewName === "phone-control") {
+        return renderPhoneControlPage();
       }
       return [
         "<div class=\"hermes-mobile-section\">",
@@ -2844,6 +2974,75 @@
         } catch (error) {
           appendAssistant("接入测试失败: " + String(error && error.message || error));
         }
+      } else if (action === "adb-open-developer") {
+        if (!callHermesAndroidBoolean("openDeveloperOptions")) {
+          androidAdbState.error = "无法直接打开开发者选项，请从系统设置手动进入。";
+          renderView();
+        }
+      } else if (action === "adb-open-wireless") {
+        if (!callHermesAndroidBoolean("openWirelessDebuggingSettings")) {
+          androidAdbState.error = "无法直接打开无线调试，请从开发者选项手动进入。";
+          renderView();
+        }
+      } else if (action === "adb-refresh") {
+        refreshAndroidAdbStatus();
+      } else if (action === "adb-pair") {
+        var pairEndpoint = String((document.getElementById("hermes-mobile-adb-pair-endpoint") || {}).value || "").trim();
+        var pairParts = pairEndpoint.match(/^(.+):([0-9]+)$/);
+        var pairHost = pairParts ? pairParts[1].trim() : "";
+        var pairPort = pairParts ? Number(pairParts[2]) : 0;
+        var pairCode = String((document.getElementById("hermes-mobile-adb-pair-code") || {}).value || "").trim();
+        if (!pairPort || !/^\d{6}$/.test(pairCode)) {
+          androidAdbState.error = "请输入配对窗口中显示的配对端口和 6 位配对码。";
+          renderView();
+          return;
+        }
+        target.disabled = true;
+        target.textContent = "正在配对";
+        await new Promise(function (resolve) { window.setTimeout(resolve, 60); });
+        var pairResult = callHermesAndroidJson("pairAndroidAdb", [pairHost, pairPort, pairCode]);
+        androidAdbState.error = pairResult.ok ? "" : (pairResult.error || pairResult.output || "配对失败");
+        androidAdbState.message = pairResult.ok ? "配对成功。现在回到无线调试主页，填写连接地址和连接端口。" : "";
+        renderView();
+      } else if (action === "adb-connect") {
+        var adbEndpoint = String((document.getElementById("hermes-mobile-adb-endpoint") || {}).value || "").trim();
+        var adbParts = adbEndpoint.match(/^(.+):([0-9]+)$/);
+        var adbHost = adbParts ? adbParts[1].trim() : "";
+        var adbPort = adbParts ? Number(adbParts[2]) : 0;
+        if (!adbHost || !adbPort) {
+          androidAdbState.error = "请填写无线调试主页显示的 IP 地址和连接端口。";
+          renderView();
+          return;
+        }
+        try {
+          localStorage.setItem("hermes.mobile.adb.host", adbHost);
+          localStorage.setItem("hermes.mobile.adb.port", String(adbPort));
+        } catch (error) {
+          // ignore storage failures
+        }
+        target.disabled = true;
+        target.textContent = "正在连接";
+        await new Promise(function (resolve) { window.setTimeout(resolve, 60); });
+        var connectResult = callHermesAndroidJson("connectAndroidAdb", [adbHost, adbPort]);
+        androidAdbState.error = connectResult.connected ? "" : (connectResult.error || connectResult.output || "连接失败");
+        androidAdbState.message = connectResult.connected ? "连接成功，Hermes 已可以通过 ADB 接管手机。" : "";
+        androidAdbState.data = callHermesAndroidJson("getAndroidAdbStatus");
+        renderView();
+      } else if (action === "adb-test") {
+        var devices = androidAdbState.data && androidAdbState.data.devices || [];
+        var serial = devices.length ? devices[0].serial : "";
+        if (!serial) {
+          androidAdbState.error = "尚未发现已连接设备，请先完成配对和连接。";
+          renderView();
+          return;
+        }
+        target.disabled = true;
+        target.textContent = "正在测试";
+        await new Promise(function (resolve) { window.setTimeout(resolve, 60); });
+        var testAdbResult = callHermesAndroidJson("runAndroidAdbShell", [serial, "getprop ro.product.model"]);
+        androidAdbState.error = testAdbResult.ok ? "" : (testAdbResult.error || testAdbResult.output || "控制测试失败");
+        androidAdbState.message = testAdbResult.ok ? "控制测试成功，设备型号：" + String(testAdbResult.output || "Android") : "";
+        renderView();
       } else if (action === "language-set") {
         currentLocale = target.getAttribute("data-locale") === "en" ? "en" : "zh";
         try {

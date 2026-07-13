@@ -2,13 +2,15 @@
 
 Hermes Mobile packages the Hermes Agent runtime, local Dashboard, Node/TUI runtime, and an Android mobile interface into a self-contained Android application.
 
-> Current status: active development. The published source builds an ARM64 debug APK and is not yet a production-signed release.
+> Current status: version 1.1 (`versionCode 2`) is under active development. The published source builds an ARM64 debug APK and is not yet a production-signed release.
 
 ## Features
 
 - Runs Hermes Agent locally on Android without requiring Termux or a remote server.
 - Bundles Python, Dashboard assets, Node/TUI runtime, and required ARM64 native libraries.
 - Provides mobile chat, session persistence, file access, automation, integrations, remote instance status, memory, Skills Hub, themes, and model settings.
+- Provides an in-app Wireless Debugging page and an `android_debug` Agent tool for paired-device diagnostics without Termux.
+- Shows streaming reasoning and tool execution as collapsible, stateful mobile cards.
 - Uses a mobile drawer and settings-oriented navigation designed for phones.
 
 ## Repository Layout
@@ -36,6 +38,8 @@ cd android
 ```
 
 The debug APK is generated under `android/app/build/outputs/apk/debug/`. APK files and local build configuration are intentionally excluded from Git.
+
+The bundled development ADB host binary is derived from LADB and must be replaced with an independently built AOSP binary before any Google Play publication. See `THIRD_PARTY_NOTICES.md`.
 
 ## Platform Support
 

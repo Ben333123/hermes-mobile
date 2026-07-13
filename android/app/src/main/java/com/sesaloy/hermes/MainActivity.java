@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.provider.Settings;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
@@ -80,12 +81,14 @@ public class MainActivity extends BridgeActivity {
     private TextToSpeech textToSpeech;
     private boolean textToSpeechReady = false;
     private boolean hermesNodeRuntimeReady = false;
+    private AndroidAdbManager androidAdbManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         activeInstance = this;
+        androidAdbManager = new AndroidAdbManager(this);
         configureWebViewForPhoneScreen();
         installHermesWebViewClient();
         installBackNavigationHandler();
@@ -186,6 +189,7 @@ public class MainActivity extends BridgeActivity {
         try {
             Os.setenv("HERMES_NODE", nodeBin.getAbsolutePath(), true);
             Os.setenv("HERMES_ANDROID_NATIVE_LIB_DIR", getApplicationInfo().nativeLibraryDir, true);
+            Os.setenv("HERMES_ANDROID_ADB_HOME", getFilesDir().getAbsolutePath(), true);
             Os.setenv("HERMES_TUI_DIR", tuiDir.getAbsolutePath(), true);
             Os.setenv("HERMES_SKIP_NODE_BOOTSTRAP", "1", true);
             String currentLdPath = System.getenv("LD_LIBRARY_PATH");
@@ -727,6 +731,57 @@ public class MainActivity extends BridgeActivity {
     }
 
     private class HermesAndroidBridge {
+        @JavascriptInterface
+        public String getAndroidAdbStatus() {
+            return androidAdbManager.status().toString();
+        }
+
+        @JavascriptInterface
+        public String pairAndroidAdb(String host, int port, String pairingCode) {
+            return androidAdbManager.pair(host, port, pairingCode).toString();
+        }
+
+        @JavascriptInterface
+        public String connectAndroidAdb(String host, int port) {
+            return androidAdbManager.connect(host, port).toString();
+        }
+
+        @JavascriptInterface
+        public String runAndroidAdbShell(String serial, String command) {
+            return androidAdbManager.shell(serial, command).toString();
+        }
+
+        @JavascriptInterface
+        public boolean openDeveloperOptions() {
+            return openAndroidSettings(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
+        }
+
+        @JavascriptInterface
+        public boolean openWirelessDebuggingSettings() {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+                return openDeveloperOptions();
+            }
+            if (openAndroidSettings("android.settings.WIRELESS_DEBUGGING_SETTINGS")) {
+                return true;
+            }
+            return openDeveloperOptions();
+        }
+
+        private boolean openAndroidSettings(String action) {
+            try {
+                Intent intent = new Intent(action);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    intent.addFlags(Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT);
+                }
+                startActivity(intent);
+                return true;
+            } catch (Exception error) {
+                Log.w(TAG, "Failed to open Android settings: " + action, error);
+                return false;
+            }
+        }
+
         @JavascriptInterface
         public boolean isEmbeddedAgentAvailable() {
             try {

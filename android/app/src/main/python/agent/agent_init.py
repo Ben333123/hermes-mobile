@@ -1067,6 +1067,35 @@ def init_agent(
         disabled_toolsets=disabled_toolsets,
         quiet_mode=agent.quiet_mode,
     )
+
+    if os.environ.get("HERMES_ANDROID_NATIVE_LIB_DIR"):
+        try:
+            import tools.android_debug_tool  # noqa: F401
+            from tools.registry import registry as _android_registry
+
+            android_tools = _android_registry.get_definitions({"android_debug"}, quiet=True)
+            loaded_names = {
+                tool.get("function", {}).get("name")
+                for tool in (agent.tools or [])
+            }
+            if android_tools and "android_debug" not in loaded_names:
+                agent.tools = list(agent.tools or []) + android_tools
+            final_names = sorted(
+                tool.get("function", {}).get("name", "")
+                for tool in (agent.tools or [])
+                if tool.get("function", {}).get("name")
+            )
+            logging.getLogger(__name__).warning(
+                "Android tool snapshot: native_dir=%s adb_home=%s registry=%s agent_tools=%s",
+                bool(os.environ.get("HERMES_ANDROID_NATIVE_LIB_DIR")),
+                bool(os.environ.get("HERMES_ANDROID_ADB_HOME")),
+                bool(android_tools),
+                ",".join(final_names),
+            )
+        except Exception:
+            logging.getLogger(__name__).exception(
+                "Android tool invariant failed while loading android_debug"
+            )
     
     # Show tool configuration and store valid tool names for validation
     agent.valid_tool_names = set()

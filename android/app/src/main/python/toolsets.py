@@ -32,7 +32,7 @@ _HERMES_CORE_TOOLS = [
     # Web
     "web_search", "web_extract",
     # Terminal + process management
-    "terminal", "process",
+    "terminal", "process", "android_debug",
     # Read the desktop GUI's embedded terminal pane, and close an agent's
     # read-only terminal tab (both gated on HERMES_DESKTOP via check_fn —
     # hidden outside the GUI).
@@ -159,7 +159,7 @@ TOOLSETS = {
 
     "terminal": {
         "description": "Terminal/command execution and process management tools",
-        "tools": ["terminal", "process"],
+        "tools": ["terminal", "process", "android_debug"],
         "includes": []
     },
     

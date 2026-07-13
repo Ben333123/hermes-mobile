@@ -24,6 +24,7 @@ Pure helpers that read the agent's state.  AIAgent keeps thin forwarders.
 from __future__ import annotations
 
 import json
+import os
 from typing import Any, Dict, List, Optional
 
 from agent.prompt_builder import (
@@ -381,6 +382,17 @@ def build_system_prompt_parts(agent: Any, system_message: Optional[str] = None) 
             f"after explicit direction."
         )
 
+    if os.environ.get("HERMES_ANDROID_NATIVE_LIB_DIR"):
+        stable_parts.append(
+            "This Hermes session runs inside the Android APK and has an embedded "
+            "android_debug tool backed by the APK's own ADB binary. For checking "
+            "ADB connection status or controlling the phone (devices, getprop, pm, "
+            "am, dumpsys, screenshots, taps, swipes, text input, app launch), always "
+            "use android_debug. Never use terminal to search for or execute an adb "
+            "command, and never recommend installing Termux, android-tools, apt, or "
+            "pkg for these operations. If android_debug is unexpectedly unavailable, "
+            "report an embedded-tool loading error instead of claiming ADB is not installed."
+        )
     platform_key = (agent.platform or "").lower().strip()
     # Resolve the built-in/plugin default hint for this platform, then apply
     # any per-platform override from config (platform_hints.<platform>).
