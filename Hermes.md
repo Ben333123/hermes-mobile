@@ -4,7 +4,7 @@ description: Sanitized Hermes Android APK project handoff memory for the public 
 metadata:
   node_type: memory
   type: project
-updated_at: 2026-07-14 00:30:00 +08:00
+updated_at: 2026-07-14 09:55:00 +08:00
 privacy: Public copy; local paths, device identifiers, network addresses, session IDs, delivery channels, and credentials are intentionally omitted.
 ---
 
@@ -36,6 +36,9 @@ privacy: Public copy; local paths, device identifiers, network addresses, sessio
 
 ### 已跑通的底层闭环
 
+- 自定义 OpenAI 兼容端点现会把站点根地址规范化为 `/v1`，并按规范化端点或生成的 provider 名合并重复配置，同时保留已有非空密钥。该修复解决了重复 provider 使运行时选中错误根地址并返回空流的问题。
+- 已用真实 Hermes Agent 会话验证 OpenAI 兼容中转的流式 Chat Completions：模型正常返回文本，单次 API 调用以 `finish_reason=stop` 完成。
+- 移动模型预设和 Python provider 模型目录已加入 `gpt-5.6-sol`、`gpt-5.6-terra`、`gpt-5.6-luna`。
 - APK 已内置 Python Agent、Dashboard 静态资源、Node.js/TUI runtime 及 ARM64 原生依赖。
 - Dashboard、Agent 主进程、Node 子进程和 PTY 已在实体 Android 设备上验证可运行。
 - 移动聊天使用本机 `/api/ws` JSON-RPC，包括 `session.create`、`session.resume`、`prompt.submit`、`message.delta` 和 `message.complete`。
@@ -48,6 +51,7 @@ privacy: Public copy; local paths, device identifiers, network addresses, sessio
 ### 内置无线 ADB
 
 - 移动抽屉提供“接管手机”入口和无线调试配对/连接界面。
+- Xiaomi、Redmi 和 POCO 设备会优先通过 Settings `SubSettings` 打开 `WirelessDebuggingFragment`，标准 Android 无线调试 Intent 保留为回退；真机 Fragment 状态已确认实际进入“无线调试”页面，而不是通用开发者选项。
 - Android 原生桥支持 `devices`、`pair`、`connect` 和 `shell`。
 - Agent 提供 `android_debug` 工具，使用 APK 内置的 ARM64 ADB 可执行文件，不依赖 Termux 或系统 `adb` 命令。
 - 原生页面和 Python Agent 使用统一的 App ADB HOME，共享配对密钥和连接状态。
@@ -80,7 +84,7 @@ privacy: Public copy; local paths, device identifiers, network addresses, sessio
 2. 补齐沙箱、子代理和命令面板的数据页，再按低风险到高风险增加操作闭环。
 3. 所有删除、重置、卸载、销毁操作必须包含确认、结果反馈和失败恢复。
 4. 若确认后台方案，增加 Foreground Service、任务期 WakeLock 和前台恢复补拉机制。
-5. 完成无线 ADB 的真实配对/连接闭环，并验证 `android_debug shell` 的非破坏性诊断命令。
+5. 继续覆盖不同 Android 厂商的无线调试设置跳转，并完成 App 内 ADB 的真实配对/连接闭环。
 6. 最后处理 SQLite FTS5、插件警告、TTS/语音遗留、release 签名和发布工程。
 
 ## 关键工程路径

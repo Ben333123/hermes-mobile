@@ -19,6 +19,9 @@
   var embeddedDashboardBaseUrl = "";
   var embeddedTerminalUrl = "";
   var MODEL_PRESETS = [
+    { label: "OpenAI 官方 / GPT-5.6 Sol", model: "gpt-5.6-sol", baseUrl: DEFAULT_CHAT_ENDPOINT },
+    { label: "OpenAI 官方 / GPT-5.6 Terra", model: "gpt-5.6-terra", baseUrl: DEFAULT_CHAT_ENDPOINT },
+    { label: "OpenAI 官方 / GPT-5.6 Luna", model: "gpt-5.6-luna", baseUrl: DEFAULT_CHAT_ENDPOINT },
     { label: "OpenAI 官方 / GPT-5.5", model: "gpt-5.5", baseUrl: DEFAULT_CHAT_ENDPOINT },
     { label: "OpenAI 官方 / GPT-5.4 mini", model: "gpt-5.4-mini", baseUrl: DEFAULT_CHAT_ENDPOINT },
     { label: "OpenAI 官方 / GPT-5.4", model: "gpt-5.4", baseUrl: DEFAULT_CHAT_ENDPOINT },
@@ -381,6 +384,22 @@
       return "custom";
     }
     return "custom";
+  }
+
+  function normalizeOpenAICompatibleBaseUrl(baseUrl) {
+    var value = String(baseUrl || "").trim().replace(/\/+$/, "");
+    if (!value) {
+      return "";
+    }
+    try {
+      var parsed = new URL(value);
+      if (!parsed.pathname || parsed.pathname === "/") {
+        parsed.pathname = "/v1";
+      }
+      return parsed.toString().replace(/\/+$/, "");
+    } catch (error) {
+      return value;
+    }
   }
 
   function loadMobileChatConfig() {
@@ -1198,7 +1217,7 @@
     }
 
     function saveModelToBackend(nextConfig, apiKey) {
-      var baseUrl = String(nextConfig.baseUrl || "").trim().replace(/\/+$/, "");
+      var baseUrl = normalizeOpenAICompatibleBaseUrl(nextConfig.baseUrl);
       var model = String(nextConfig.model || "").trim();
       var payload = {
         scope: "main",
@@ -3118,7 +3137,7 @@
         var apiKeyInput = document.getElementById("hermes-mobile-model-key");
         config = {
           apiKey: "",
-          baseUrl: document.getElementById("hermes-mobile-model-endpoint").value.trim(),
+          baseUrl: normalizeOpenAICompatibleBaseUrl(document.getElementById("hermes-mobile-model-endpoint").value),
           model: document.getElementById("hermes-mobile-model-name").value.trim()
         };
         try {

@@ -940,6 +940,21 @@ class ModelAssignment(BaseModel):
     profile: Optional[str] = None
 
 
+def _normalize_openai_compatible_base_url(base_url: str) -> str:
+    value = str(base_url or "").strip().rstrip("/")
+    if not value:
+        return ""
+    try:
+        parsed = urllib.parse.urlsplit(value)
+    except ValueError:
+        return value
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        return value
+    if parsed.path in {"", "/"}:
+        parsed = parsed._replace(path="/v1")
+    return urllib.parse.urlunsplit(parsed).rstrip("/")
+
+
 class MoaModelSlot(BaseModel):
     provider: str = ""
     model: str = ""
@@ -4459,6 +4474,9 @@ async def set_model_assignment(body: ModelAssignment, profile: Optional[str] = N
     api_key = (body.api_key or "").strip()
     api_mode = (body.api_mode or "").strip()
 
+    if provider.lower() in {"custom", "local"}:
+        base_url = _normalize_openai_compatible_base_url(base_url)
+
     if scope not in {"main", "auxiliary"}:
         raise HTTPException(status_code=400, detail="scope must be 'main' or 'auxiliary'")
 
@@ -4572,23 +4590,40 @@ def _apply_model_assignment_sync(
             try:
                 from hermes_cli.main import _auto_provider_name, _save_custom_provider
 
+                provider_name = _auto_provider_name(base_url)
                 _save_custom_provider(
                     base_url,
                     api_key,
                     model,
-                    name=_auto_provider_name(base_url),
+                    name=provider_name,
                 )
                 cp_cfg = load_config()
                 providers = cp_cfg.get("custom_providers")
                 if isinstance(providers, list):
+                    matching_entries = []
+                    retained_entries = []
                     for entry in providers:
-                        if (
-                            isinstance(entry, dict)
-                            and str(entry.get("base_url") or "").rstrip("/")
-                            == base_url.rstrip("/")
-                        ):
-                            if api_mode:
-                                entry["api_mode"] = api_mode
+                        if not isinstance(entry, dict):
+                            retained_entries.append(entry)
+                            continue
+                        entry_url = _normalize_openai_compatible_base_url(entry.get("base_url"))
+                        same_name = str(entry.get("name") or "").strip().casefold() == provider_name.casefold()
+                        if entry_url == base_url or same_name:
+                            matching_entries.append(entry)
+                        else:
+                            retained_entries.append(entry)
+                    merged_entry = {}
+                    for entry in matching_entries:
+                        for key, value in entry.items():
+                            if value not in (None, "", [], {}) and key not in merged_entry:
+                                merged_entry[key] = value
+                    merged_entry.update({"name": provider_name, "base_url": base_url, "model": model})
+                    if api_key:
+                        merged_entry["api_key"] = api_key
+                    if api_mode:
+                        merged_entry["api_mode"] = api_mode
+                    retained_entries.append(merged_entry)
+                    cp_cfg["custom_providers"] = retained_entries
                 try:
                     from hermes_cli.runtime_provider import canonical_custom_identity
 

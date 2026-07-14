@@ -761,10 +761,36 @@ public class MainActivity extends BridgeActivity {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
                 return openDeveloperOptions();
             }
+            String manufacturer = String.valueOf(Build.MANUFACTURER).toLowerCase(Locale.ROOT);
+            if ((manufacturer.contains("xiaomi") || manufacturer.contains("redmi") || manufacturer.contains("poco"))
+                    && openWirelessDebuggingSubSettings()) {
+                return true;
+            }
             if (openAndroidSettings("android.settings.WIRELESS_DEBUGGING_SETTINGS")) {
                 return true;
             }
+            if (openWirelessDebuggingSubSettings()) {
+                return true;
+            }
             return openDeveloperOptions();
+        }
+
+        private boolean openWirelessDebuggingSubSettings() {
+            try {
+                Intent intent = new Intent();
+                intent.setClassName("com.android.settings", "com.android.settings.SubSettings");
+                intent.putExtra(":settings:show_fragment", "com.android.settings.development.WirelessDebuggingFragment");
+                intent.putExtra(":settings:show_fragment_title", "无线调试");
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    intent.addFlags(Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT);
+                }
+                startActivity(intent);
+                return true;
+            } catch (Exception error) {
+                Log.w(TAG, "Failed to open Wireless Debugging sub-settings", error);
+                return false;
+            }
         }
 
         private boolean openAndroidSettings(String action) {
