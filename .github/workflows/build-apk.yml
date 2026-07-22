@@ -66,6 +66,7 @@ jobs:
         run: |
           cd android
           chmod +x gradlew
+          export ANDROID_SDK_ROOT=$ANDROID_HOME
           ./gradlew assembleDebug --no-daemon --console=plain
 
       - name: Upload APK artifact
